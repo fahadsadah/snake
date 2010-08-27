@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+		<title>Snake</title>
+		<script type='text/javascript' src='keyboard.js'></script>
+		<script type='text/javascript' src='score.js'></script>
+		<script type='text/javascript' src='game.js'></script>
+		<script type='text/javascript' src='graphics.js'></script>
+	</head>
+	<body>
+		<h1>Snake</h1>
+		<div id='main'>
+			<div id='game' style='float: left;'></div>
+			<div id='scores' style='float: right;'>
+				<div id='userscore'>
+					Your score is <span id='score'></span>.<br />
+					<a id='submit' href='about:blank'>Submit your score!</a>
+				</div>
+				<div id='highscores'>
+					<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+					<script>
+					new TWTR.Widget({
+					  version: 2,
+					  type: 'search',
+					  search: 'http://2tu.us/2m07',
+					  interval: 6000,
+					  title: '',
+					  subject: 'Recently submitted highscores',
+					  width: 250,
+					  height: 300,
+					  theme: {
+					    shell: {
+					      background: '#8ec1da',
+					      color: '#ffffff'
+					    },
+					    tweets: {
+					      background: '#ffffff',
+					      color: '#444444',
+					      links: '#1985b5'
+					    }
+					  },
+					  features: {
+					    scrollbar: false,
+					    loop: true,
+					    live: true,
+					    hashtags: true,
+					    timestamp: true,
+					    avatars: true,
+					    toptweets: true,
+					    behavior: 'default'
+					  }
+					}).render().start();
+					</script>
+				</div>
+			</div>
+		</div>
+		<script type='text/javascript' src='main.js'></script>
+	</body>
+</html>

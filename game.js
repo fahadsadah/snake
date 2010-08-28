@@ -61,7 +61,11 @@ function game_loop() {
 		snake[snake.length] = [x, y];
 		board[y][x] = SNAKE;
 		
-		while (snake.length > snakelength) {
+		if (snake.length > snakelength) {
+			removeme = snake.shift();
+			board[removeme[1]][removeme[0]] = EMPTY;
+		}
+		if (snake.length > snakelength) {
 			removeme = snake.shift();
 			board[removeme[1]][removeme[0]] = EMPTY;
 		}

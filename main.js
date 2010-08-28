@@ -11,25 +11,41 @@ const DOWN=40;
 const X_SIZE = 50;
 const Y_SIZE = 50;
 
+var paused = false;
+
 game_init();
 graphics_init();
 score_add(0);
 
-function loop() {
-	var result = game_loop();
-	graphics_loop();
-	if (result) {
-		var msg = document.getElementById('message');
-		msg.innerHTML = '<h3>Game over! Click <a href=\'javascript:location.reload(true);\'>here</a> to restart!</h3>'
+function togglepause() {
+	if (!paused) {
+		paused = true;
 	}
 	else {
-		//delay starts at 100ms
-		//for every apple, it shrinks 1ms, to a min of 10ms
-		var wait = 100 - (score_get() / 10);
-		if (wait < 10) {
-			wait = 10;
+		paused = false;
+	}
+}
+
+function loop() {
+	if (!paused) {
+		var result = game_loop();
+		graphics_loop();
+		if (result) {
+			var msg = document.getElementById('message');
+			msg.innerHTML = '<h3>Game over! Click <a href=\'javascript:location.reload(true);\'>here</a> to restart!</h3>'
 		}
-		setTimeout('loop()', wait);
+		else {
+			//delay starts at 100ms
+			//for every apple, it shrinks 1ms, to a min of 10ms
+			var wait = 100 - (score_get() / 10);
+			if (wait < 10) {
+				wait = 10;
+			}
+			setTimeout('loop()', wait);
+		}
+	}
+	else {
+		setTimeout('loop()', 50);
 	}
 }
 loop();

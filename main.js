@@ -24,8 +24,8 @@ function loop() {
 	}
 	else {
 		//delay starts at 100ms
-		//for every apple, it shrinks 0.25ms, to a min of 10ms
-		var wait = 100 - (score_get() / 25);
+		//for every apple, it shrinks 1ms, to a min of 10ms
+		var wait = 100 - (score_get() / 10);
 		if (wait < 10) {
 			wait = 10;
 		}

@@ -19,7 +19,8 @@ function loop() {
 	var result = game_loop();
 	graphics_loop();
 	if (result) {
-		alert('Game over');
+		var msg = document.getElementById('message');
+		msg.innerHTML = '<h3>Game over! Click <a href=\'javascript:location.reload(true);\'>here</a> to restart!</h3>'
 	}
 	else {
 		//delay starts at 100ms

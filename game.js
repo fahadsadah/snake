@@ -84,6 +84,10 @@ function game_loop() {
 			addfruit(POISON);
 			ispoison = true;
 		}
+		if (score >= 200 && score % 100 == 0) {
+			addfruit(POISON);
+			addfruit(APPLE);
+		}
 	}
 	if (contents == POISON) {
 		snake[snake.length] = [x, y];

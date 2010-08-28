@@ -1,6 +1,7 @@
 var board = [];
 var snake = [];
 var snakelength = 1;
+var ispoison = false;
 var direction = Math.floor(Math.random()*2)+38; //Get a random number from 38-40 (a direction)
 function addfruit(fruit) {
 	var x = Math.floor(Math.random()*X_SIZE);
@@ -79,8 +80,9 @@ function game_loop() {
 		
 		score_add(10);
 		
-		if (score == 100) {
+		if (score == 100 && !ispoison) {
 			addfruit(POISON);
+			ispoison = true;
 		}
 	}
 	if (contents == POISON) {

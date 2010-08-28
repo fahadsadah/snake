@@ -2,14 +2,14 @@ var board = [];
 var snake = [];
 var snakelength = 1;
 var direction = Math.floor(Math.random()*2)+38; //Get a random number from 38-40 (a direction)
-function addapple() {
+function addfruit(fruit) {
 	var x = Math.floor(Math.random()*X_SIZE);
 	var y = Math.floor(Math.random()*Y_SIZE);
 	while (board[y][x] != EMPTY) {
 		var x = Math.floor(Math.random()*X_SIZE);
 		var y = Math.floor(Math.random()*Y_SIZE);
 	}
-	board[y][x] = APPLE;
+	board[y][x] = fruit;
 }
 function game_init() {
 	for (y=0;y<Y_SIZE;y++) {
@@ -22,7 +22,7 @@ function game_init() {
 	var inity = Math.floor(Math.random()*Y_SIZE);
 	snake[0] = [initx, inity];
 	board[inity][initx] = SNAKE;
-	addapple();
+	addfruit(APPLE);
 }
 function game_loop() {
 	var newdir = getdirection();
@@ -75,9 +75,22 @@ function game_loop() {
 		board[y][x] = SNAKE;
 		
 		snakelength += 3;
-		addapple();
+		addfruit(APPLE);
 		
 		score_add(10);
+		
+		if (score == 100) {
+			addfruit(POISON);
+		}
+	}
+	if (contents == POISON) {
+		snake[snake.length] = [x, y];
+		board[y][x] = SNAKE;
+		
+		snakelength -= 3;
+		addfruit(POISON);
+		
+		score_add(-10);
 	}
 	if (contents == SNAKE) {
 		return 1;

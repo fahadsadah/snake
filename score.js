@@ -9,3 +9,6 @@ function score_add(value) {
 		submit.href = 'http://twitter.com/?status=' + escape('I just scored OVAR 9000 at http://2tu.us/2m0d!');
 	}
 }
+function score_get() {
+	return score;
+}

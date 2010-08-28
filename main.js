@@ -21,7 +21,13 @@ function loop() {
 		alert('Game over');
 	}
 	else {
-		setTimeout('loop()', 100); //call this function again in 0.1s
+		//delay starts at 100ms
+		//for every apple, it shrinks 0.25ms, to a min of 10ms
+		var wait = 100 - (score_get() / 25);
+		if (wait < 10) {
+			wait = 10;
+		}
+		setTimeout('loop()', wait);
 	}
 }
 loop();

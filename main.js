@@ -41,11 +41,11 @@ function loop() {
 			if (wait < 10) {
 				wait = 10;
 			}
-			setTimeout('loop()', wait);
+			setTimeout(loop, wait);
 		}
 	}
 	else {
-		setTimeout('loop()', 50);
+		setTimeout(loop, 50);
 	}
 }
 loop();

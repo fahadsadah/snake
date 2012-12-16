@@ -93,11 +93,7 @@ function game_loop() {
 		snake[snake.length] = [x, y];
 		board[y][x] = SNAKE;
 		
-		snakelength -= 3;
-		if (snakelength < 1) {
-			snakelength = 1;
-		}
-		
+		addfruit(POISON);
 		addfruit(POISON);
 		
 		score_add(-10);

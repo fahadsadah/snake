@@ -3,7 +3,8 @@ const SNAKE = '#ff0000';
 const APPLE = '#00ff00';
 const POISON = '#0000ff';
 const TAR = '#8B5A00';
-var droppable = [APPLE, POISON, TAR];
+const SELFEAT = '#ffffff';
+var droppable = [APPLE, POISON, TAR, SELFEAT];
 
 const LEFT=37;
 const UP=38;

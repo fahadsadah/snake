@@ -22,7 +22,10 @@ function graphics_loop() {
 	for (y=0;y<Y_SIZE;y++) {
 		for (x=0;x<X_SIZE;x++) {
 			colour = board[y][x];
-			if (tarred && board[y][x] == SNAKE) {
+			if (selfeat && board[y][x] == SNAKE) {
+				colour = SELFEAT;
+			}
+			else if (tarred && board[y][x] == SNAKE) {
 				colour = TAR;
 			}
 			document.getElementById('cell-' + y + '-' + x).style.backgroundColor = colour;

@@ -96,7 +96,9 @@ function game_loop() {
 		addfruit(POISON);
 		addfruit(POISON);
 		
-		score_add(-10);
+		if (!selfeat) {
+			score_add(-10);
+		}
 	}
 	if (contents == TAR) {
 		snake[snake.length] = [x, y];

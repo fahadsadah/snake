@@ -2,7 +2,8 @@ const EMPTY = '#000000';
 const SNAKE = '#ff0000';
 const APPLE = '#00ff00';
 const POISON = '#0000ff';
-var droppable = [APPLE, POISON];
+const TAR = '#8B5A00';
+var droppable = [APPLE, POISON, TAR];
 
 const LEFT=37;
 const UP=38;
@@ -41,6 +42,10 @@ function loop() {
 			var wait = 100 - (score_get() / 10);
 			if (wait < 10) {
 				wait = 10;
+			}
+			
+			if (tarred > 0) {
+				wait = Math.floor(wait * 2);
 			}
 			setTimeout(function() { loop(); }, wait);
 		}

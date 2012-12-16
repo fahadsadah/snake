@@ -3,6 +3,9 @@ var snake = [];
 var snakelength = 1;
 var nextdrop = 10 * (Math.floor(Math.random()*6)+7); //Get a random multiple of 10 between 70 and 130 - number of points the next drop will occur at 
 var direction = Math.floor(Math.random()*2)+38; //Get a random number from 38-40 (a direction)
+
+var tarred = 0;
+
 function addfruit(fruit) {
 	var x = Math.floor(Math.random()*X_SIZE);
 	var y = Math.floor(Math.random()*Y_SIZE);
@@ -94,8 +97,22 @@ function game_loop() {
 		
 		score_add(-10);
 	}
+	if (contents == TAR) {
+		snake[snake.length] = [x, y];
+		board[y][x] = SNAKE;
+		
+		var wait = 100 - (score_get() / 10); //Current wait policy here
+		if (wait < 10) {
+			wait = 10;
+		}
+		wait = Math.round(1000/wait); //Turns per second
+		tarred = 2.5 * wait; //Tar for five seconds worth of turns 
+	}
 	if (contents == SNAKE) {
 		return 1;
+	}
+	if (tarred > 0) {
+		tarred = tarred - 1;
 	}
 	return 0;
 }

@@ -21,17 +21,11 @@ function graphics_init() {
 function graphics_loop() {
 	for (y=0;y<Y_SIZE;y++) {
 		for (x=0;x<X_SIZE;x++) {
-			if (tarred == 0) {
-				document.getElementById('cell-' + y + '-' + x).style.backgroundColor = board[y][x];
+			colour = board[y][x];
+			if (tarred && board[y][x] == SNAKE) {
+				colour = TAR;
 			}
-			else {
-				if (board[y][x] == SNAKE) {
-					document.getElementById('cell-' + y + '-' + x).style.backgroundColor = TAR;
-				}
-				else {
-					document.getElementById('cell-' + y + '-' + x).style.backgroundColor = board[y][x];
-				}
-			}
+			document.getElementById('cell-' + y + '-' + x).style.backgroundColor = colour;
 		}
 	}
 }

@@ -10,51 +10,24 @@
 	</head>
 	<body>
 		<h1>Snake</h1>
+		<div id='scores'>
+			Your score is <b><span id='score'></span></b>.<br>
+		</div>
 		<div id='main'>
 			<div id='game' style='float: left;' onclick='togglepause();'></div>
-			<div id='scores' style='float: right;'>
-				<div id='userscore'>
-					Your score is <span id='score'></span>.<br>
-<!--					<a id='submit' href='about:blank'>Submit your score!</a>-->
+			<div id='sidebar'>
+				<div id='legend'>
+					<table>
+						<tr style='height: 10px;'><td style='width: 10px; background-color: #000000;'></td><td>Background</td></tr>
+						<tr style='height: 10px;'><td style='width: 10px; background-color: #ff0000;'></td><td>Snake</td></tr>
+						<tr style='height: 10px;'><td style='width: 10px; background-color: #00ff00;'></td><td>Apple</td></tr>
+						<tr style='height: 10px;'><td style='width: 10px; background-color: #0000ff;'></td><td>Poison apple</td></tr>
+						<tr style='height: 10px;'><td style='width: 10px; background-color: #8B5A00;'></td><td>Tar - temporarily slows you down</td></tr>
+						<tr style='height: 10px;'><td style='width: 10px; background-color: #ffffff; border: solid; border-width: 1px; border-color: black;"'></td><td>Magic - temporarily makes you invincible</td></tr>
+					</table>
 				</div>
-<!--				<div id='highscores'>
-					<script type='text/javascript' src="http://widgets.twimg.com/j/2/widget.js"></script>
-					<script type='text/javascript'>
-					new TWTR.Widget({
-					  version: 2,
-					  type: 'search',
-					  search: 'http://2tu.us/2m0d',
-					  interval: 6000,
-					  title: '',
-					  subject: 'Recently submitted highscores',
-					  width: 250,
-					  height: 300,
-					  theme: {
-					    shell: {
-					      background: '#8ec1da',
-					      color: '#ffffff'
-					    },
-					    tweets: {
-					      background: '#ffffff',
-					      color: '#444444',
-					      links: '#1985b5'
-					    }
-					  },
-					  features: {
-					    scrollbar: false,
-					    loop: true,
-					    live: true,
-					    hashtags: true,
-					    timestamp: true,
-					    avatars: true,
-					    toptweets: true,
-					    behavior: 'default'
-					  }
-					}).render().start();
-					</script>
-				</div>
--->			</div>
-			<div id='message'></div> 
+				<div id='message'></div>
+			</div>
 		</div>
 		<script type='text/javascript' src='main.js'></script>
 	</body>

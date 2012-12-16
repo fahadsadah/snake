@@ -1,18 +1,18 @@
-const EMPTY = '#000000';
-const SNAKE = '#ff0000';
-const APPLE = '#00ff00';
-const POISON = '#0000ff';
-const TAR = '#8B5A00';
-const SELFEAT = '#ffffff';
+var EMPTY = '#000000';
+var SNAKE = '#ff0000';
+var APPLE = '#00ff00';
+var POISON = '#0000ff';
+var TAR = '#8B5A00';
+var SELFEAT = '#ffffff';
 var droppable = [APPLE, POISON, TAR, SELFEAT];
 
-const LEFT=37;
-const UP=38;
-const RIGHT=39;
-const DOWN=40;
+var LEFT=37;
+var UP=38;
+var RIGHT=39;
+var DOWN=40;
 
-const X_SIZE = 50;
-const Y_SIZE = 50;
+var X_SIZE = 50;
+var Y_SIZE = 50;
 
 var paused = false;
 

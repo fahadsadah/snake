@@ -107,7 +107,7 @@ function game_loop() {
 			wait = 10;
 		}
 		wait = Math.round(1000/wait); //Turns per second
-		tarred = Math.ceiling(2.5 * wait); //Tar for five seconds worth of turns 
+		tarred = Math.ceil(2.5 * wait); //Tar for five seconds worth of turns 
 	}
 	if (contents == SELFEAT) {
 		snake[snake.length] = [x, y];
@@ -118,7 +118,7 @@ function game_loop() {
 			wait = 10;
 		}
 		wait = Math.round(1000/wait); //Turns per second
-		selfeat = Math.ceiling(2.5 * wait); //Selfeat for five seconds worth of turns 
+		selfeat = Math.ceil(2.5 * wait); //Selfeat for five seconds worth of turns 
 	}
 	if (contents == SNAKE && !selfeat) {
 		return 1;

@@ -2,6 +2,7 @@ const EMPTY = '#000000';
 const SNAKE = '#ff0000';
 const APPLE = '#00ff00';
 const POISON = '#0000ff';
+var droppable = [APPLE, POISON];
 
 const LEFT=37;
 const UP=38;

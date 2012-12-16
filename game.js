@@ -1,7 +1,7 @@
 var board = [];
 var snake = [];
 var snakelength = 1;
-var ispoison = false;
+var nextdrop = 10 * (Math.floor(Math.random()*6)+7); //Get a random multiple of 10 between 70 and 130 - number of points the next drop will occur at 
 var direction = Math.floor(Math.random()*2)+38; //Get a random number from 38-40 (a direction)
 function addfruit(fruit) {
 	var x = Math.floor(Math.random()*X_SIZE);
@@ -80,13 +80,9 @@ function game_loop() {
 		
 		score_add(10);
 		
-		if (score == 100 && !ispoison) {
-			addfruit(POISON);
-			ispoison = true;
-		}
-		if (score >= 200 && score % 100 == 0) {
-			addfruit(POISON);
-			addfruit(APPLE);
+		if (score == nextdrop) {
+			addfruit(droppable[Math.floor(Math.random()*droppable.length)]);
+			nextdrop = nextdrop + (10 * (Math.floor(Math.random()*6)+7)); //Next drop is 7-13 apples away
 		}
 	}
 	if (contents == POISON) {

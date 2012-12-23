@@ -3,18 +3,18 @@
 	<head>
 		<meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
 		<title>Snake</title>
-		<script type='text/javascript' src='keyboard.js'></script>
 		<script type='text/javascript' src='score.js'></script>
 		<script type='text/javascript' src='game.js'></script>
 		<script type='text/javascript' src='graphics.js'></script>
 	</head>
 	<body>
 		<h1>Snake</h1>
-		<div id='scores'>
+		<div id='info'>
+			To move the snake, use WASD or ↑←↓→, or click on the board. To pause, press space, or click on the snake.<br>
 			Your score is <b><span id='score'></span></b>.<br>
 		</div>
 		<div id='main'>
-			<div id='game' style='float: left;' onclick='togglepause();'></div>
+			<div id='game' style='float: left;'></div>
 			<div id='sidebar'>
 				<div id='legend'>
 					<table>
@@ -30,5 +30,6 @@
 			</div>
 		</div>
 		<script type='text/javascript' src='main.js'></script>
+		<script type='text/javascript' src='keyboard.js'></script>
 	</body>
 </html>

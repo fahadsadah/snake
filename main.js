@@ -16,6 +16,16 @@ var Y_SIZE = 50;
 
 var paused = false;
 
+var directionqueue = [];
+function getdirection() {
+	if (directionqueue.length > 0) {
+		return directionqueue.shift();
+	}
+	else {
+		return 0;
+	}
+}
+
 game_init();
 graphics_init();
 score_add(0);
